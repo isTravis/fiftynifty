@@ -117,7 +117,6 @@ export const User = React.createClass({
 										<span style={this.props.userData.loading ? { opacity: 0 } : {}}>
 											{user.name}, {user.state} 
 										</span>
-
 										{this.props.userData.loading &&
 											<div style={[styles.loader]}>
 												<Spinner />
@@ -127,7 +126,6 @@ export const User = React.createClass({
 									{isLocalUser &&
 										<div>
 											<div style={styles.repsWrapper}>
-
 												<div style={styles.repsBox} className={'pt-elevation-3'}>
 													<div style={styles.sectionTitle}>Your Representatives</div>
 														<div style={styles.centered}>
@@ -164,14 +162,15 @@ export const User = React.createClass({
 																		); 
 																	})}
 																	</div>
-																	<div> Unfortunately, you are not fully represented in congress.</div>
-																	<div>You can still join the game by inviting your friends from other states and encouraging them to call</div>
+
+																	<div>Apologies. We had trouble finding all your representatives.</div>
+																	<div>You can still join the game by calling those we did find or inviting your friends from other states and encouraging them to call.</div>
 																</div>
 															</div>
 														}
 
 														{reps.length > 3 &&
-														<AddressInput geolocateFunction={this.geolocateFunction} isLoading={this.props.userData.latLonLoading} />
+															<AddressInput geolocateFunction={this.geolocateFunction} isLoading={this.props.userData.latLonLoading} />
 														}
 
 														{reps.length === 3 && 
